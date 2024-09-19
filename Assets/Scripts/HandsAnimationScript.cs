@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class HandsAnimationScript : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class HandsAnimationScript : MonoBehaviour {
+    public InputActionProperty pinchAction;
+    public InputActionProperty grabAction;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public Animator animator;
+    void Update() {
+        float pinchValue = pinchAction.action.ReadValue<float>();
+        animator.SetFloat("Trigger", pinchValue);
+        float grabValue = grabAction.action.ReadValue<float>();
+        animator.SetFloat("Grip", grabValue);
     }
 }
