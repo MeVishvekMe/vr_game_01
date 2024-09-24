@@ -12,6 +12,8 @@ public class SmoothClimb : MonoBehaviour
     private Rigidbody Playerrigidbody;
     private Vector3 PlayerVelocity;
     [SerializeField] private float PushFactor = 1.5f;
+    //[SerializeField] private float distance = 5.0f;
+    //[SerializeField] private float speed = 4.0f;
     private void Awake()
     {   
         OnValidate();
@@ -43,7 +45,8 @@ public class SmoothClimb : MonoBehaviour
                 if (PlayerVelocity.y > 0)
                 {
                     Vector3 force = new Vector3(0, PlayerVelocity.y * PushFactor, 0);
-                    Playerrigidbody.AddForce(force, ForceMode.Force);
+                    Playerrigidbody.AddForce(force, ForceMode.Impulse);
+                    //PhysicRig.transform.position = Vector3.MoveTowards(PhysicRig.transform.position, new Vector3(0, distance, 0), speed);
                 }
             }
     }
