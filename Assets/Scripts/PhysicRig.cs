@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PhysicRig : MonoBehaviour {
     public Transform playerHead;
+    public Transform leftController;
+    public Transform rightController;
+
+    public ConfigurableJoint headJoint;
+    public ConfigurableJoint leftHandJoint;
+    public ConfigurableJoint rightHandJoint;
     public CapsuleCollider bodyCollider;
 
     public float bodyMinHeight = 0.5f;
@@ -11,5 +17,11 @@ public class PhysicRig : MonoBehaviour {
     void FixedUpdate() {
         bodyCollider.height = Mathf.Clamp(playerHead.localPosition.y, bodyMinHeight, bodyMaxHeight);
         bodyCollider.center = new Vector3(playerHead.localPosition.x, bodyCollider.height / 2, playerHead.localPosition.z);
+        leftHandJoint.targetPosition = leftController.localPosition;
+        leftHandJoint.targetRotation = leftController.localRotation;
+        rightHandJoint.targetPosition = rightController.localPosition;
+        rightHandJoint.targetRotation = rightController.localRotation;
+
+        headJoint.targetPosition = playerHead.localPosition;
     }
 } 
