@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PhysicRig : MonoBehaviour {
-    public GameObject head;
-    public CapsuleCollider capsuleCollider;
+    public Transform playerHead;
+    public CapsuleCollider bodyCollider;
 
-    void Update() {
-        capsuleCollider.height = head.transform.position.y;
+    public float bodyMinHeight = 0.5f;
+    public float bodyMaxHeight = 2f;
+    void FixedUpdate() {
+        bodyCollider.height = Mathf.Clamp(playerHead.localPosition.y, bodyMinHeight, bodyMaxHeight);
+        bodyCollider.center = new Vector3(playerHead.localPosition.x, bodyCollider.height / 2, playerHead.localPosition.z);
     }
 } 
