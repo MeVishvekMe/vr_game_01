@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -16,6 +17,8 @@ public class Ragdoll : MonoBehaviour
     
     private bool IsGrabbed = false;
     private Rigidbody[] parts;
+
+    //public Collider spherecollider;
     private void Awake()
     {
         
@@ -57,6 +60,13 @@ public class Ragdoll : MonoBehaviour
     }
     
     
-    
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider == spherecollider)
+        {
+            Debug.Log("colliding");
+            return;
+        }
+    }*/
     
 }
