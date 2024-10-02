@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Ultimate Game Tools.meta
 guid: 4f0db7d37c493894480ba0ce81b33d99
+========
+guid: b6622e8d857714a418f3ed3adc9f9db8
+>>>>>>>> Stashed changes:Assets/FastIK/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

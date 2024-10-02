@@ -36,9 +36,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - e_hands
+  - e_hipbody
+  - e_legs
   m_SortingLayers:
   - name: Default
     uniqueID: 0
